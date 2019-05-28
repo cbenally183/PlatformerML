@@ -2,9 +2,9 @@ import numpy as np
 from PIL import ImageGrab
 import cv2
 import time
-#import tensorflow
-#import keras
-#from keras import layers
+import tensorflow
+import keras
+from keras import layers
 
 #from keypress import PressKey, ReleaseKey, UP_ARROW, RIGHT_ARROW, DOWN_ARROW, LEFT_ARROW
 def screen_record():
