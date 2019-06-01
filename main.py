@@ -19,15 +19,16 @@ def screen_record():
             cv2.destroyAllWindows()
             break
 
-screen_record()
-#time.sleep(4)
-#PressKey(RIGHT_ARROW)
-#PressKey(UP_ARROW)
-#ReleaseKey(UP_ARROW)
-#time(1)
 
-#model_1 = keras.Sequential()
-#model_1.add(layers.Dense(64,activation = 'relu'))
-#model_1.add(layers.Dense(64))
+#start recording
+screen_record()
+model_1 = keras.Sequential()
+model_1.add(layers.Dense(64, activation='relu', input_dim=600))
+#Hidden Layers
+model_1.add(layers.Dense(64, activation='relu'))
+model_1.add(layers.Dense(64, activation='relu'))
+model_1.add(layers.Dense(64, activation='relu'))
+#output for four directions
+model_1.add(layers.Dense(4, activation='softmax'))
 
 
