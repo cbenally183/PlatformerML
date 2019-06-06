@@ -2,17 +2,15 @@ import numpy as np
 from PIL import ImageGrab
 import cv2
 import time
-#import tensorflow
-#import keras
-#from keras import layers
+import tensorflow
+import keras
+from keras import layers
 
 #from keypress import PressKey, ReleaseKey, UP_ARROW, RIGHT_ARROW, DOWN_ARROW, LEFT_ARROW
 def screen_record():
     last_time = time.time()
     while(True):
         printscreen = np.array(ImageGrab.grab(bbox=(0,0,600,600)))
-        #print(printscreen.shape)
-        printscreen = printscreen.reshape(len(printscreen), 600*600)
         print(printscreen.shape)
         #print('loop took {} seconds'.format(time.time() - last_time))
         last_time = time.time()
@@ -24,14 +22,7 @@ def screen_record():
 
 
 
-#model_1 = keras.Sequential()
-#model_1.add(layers.Dense(64, activation='relu', input_dim=600))
-##Hidden Layers
-#model_1.add(layers.Dense(32, activation='relu'))
-#model_1.add(layers.Dense(32, activation='relu'))
-#model_1.add(layers.Dense(32, activation='relu'))
-#output for four directions
-#model_1.add(layers.Dense(4, activation='softmax'))
+model_1 = keras.Sequential()
 
 screen_record()
 
