@@ -18,7 +18,7 @@ model = keras.Sequential()
 model.add(keras.layers.Dense(12),activation="relu)
 model.add(keras.layers.Dense(24),activation="relu)
 model.add(keras.layers.Dense(20),activation="relu")
-
+model.add(keras.layers.Dense(18),activation="relu")
 
 #save to Json
 save_results = model.to_json()
