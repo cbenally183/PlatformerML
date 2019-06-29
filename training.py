@@ -22,7 +22,3 @@ import random
 
 #save to Json
 #save_results = model.to_json()
-
-
-print(random.randint(0,51))
-print(random.randint(0,51))
