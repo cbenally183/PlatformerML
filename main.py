@@ -2,13 +2,14 @@ import numpy as np
 from PIL import ImageGrab
 import cv2
 import time
-import tensorflow
-import keras
-from keras import layers
+#import tensorflow
+#import keras
+#from keras import layers
 
 #from keypress import PressKey, ReleaseKey, UP_ARROW, RIGHT_ARROW, DOWN_ARROW, LEFT_ARROW
 i = 0
 printscreen = 0
+videoinput = cv2.VideoCapture(0)
 
 def screen_record():
     last_time = time.time()
@@ -22,14 +23,24 @@ def screen_record():
             cv2.destroyAllWindows()
             break
 
+def video_capture():
+    while(True):
+        ret, frame = videoinput.read()
+        if ret:
+            cv2.imshow('Webcam',frame)
+        if cv2.waitKey(1) and 0xFF == ord('q'):
+            break
 
-model_1 = keras.Sequential()
+    videoinput.release()
+    cv2.destroyAllWindows()
 
-screen_record()
+#model_1 = keras.Sequential()
 
+#screen_record()
+video_capture()
 cv2.imshow('window', cv2.cvtColor(printscreen, cv2.COLOR_BGR2RGB))
 
-model_1.add(keras.layers.Dense(12), activation="relu")
-model_1.add(keras.layers.Dense(24), activation="relu")
-model_1.add(keras.layers.Dense(20), activation="relu")
-model_1.add(keras.layers.Dense(18), activation="relu")
+#model_1.add(keras.layers.Dense(12), activation="relu")
+#model_1.add(keras.layers.Dense(24), activation="relu")
+#model_1.add(keras.layers.Dense(20), activation="relu")
+#model_1.add(keras.layers.Dense(18), activation="relu")
