@@ -12,8 +12,8 @@ import random
 #np.random.seed(7)
 
 #import dataset
-#image = Image.open("Training Data/red1.png")
-#cv2.imshow('window', image)
+image = Image.open("Training Data/red1.png")
+cv2.imshow('window', image)
 #model = keras.Sequential()
 #model.add(keras.layers.Dense(12),activation="relu)
 #model.add(keras.layers.Dense(24),activation="relu)
